@@ -104,7 +104,7 @@ author:
   name             : "Jake Webber"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Code at the beach"
-  location         : "Sunshine Coast, Australian"
+  location         : "Sunshine Coast, Australia"
   email            :
   links:
     - label: "Email"
