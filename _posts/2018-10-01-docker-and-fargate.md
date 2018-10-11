@@ -1,5 +1,3 @@
-# ECS Fargate and Docker #
-
 I've used Docker for mostly deployment related tasks, however I wanted to dig a little bit deeper with Docker Compose.
 
 ## Goals
