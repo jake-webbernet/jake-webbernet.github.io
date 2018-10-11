@@ -7,5 +7,11 @@ If I'm honest, I am excited that the savings it will bring my business. Lots of 
 From what I have read there seems to be two types of gems - the 'Standard' gem and the 'Rails Engine' gem.
 
 This tutorial I found pretty great as a starting point, as it allowed me to create a gem from scratch (not using a generator). I used this to easily abstract logic away from one my main apps.
+https://www.sitepoint.com/creating-your-first-gem/
 
+
+
+
+Another tutorial I need to checkout, creating a Rails engine
 https://www.smashingmagazine.com/2011/06/a-guide-to-starting-your-own-rails-engine-gem/
+
