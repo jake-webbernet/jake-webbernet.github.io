@@ -47,6 +47,24 @@ I could change this by again running `raspi-config` and going to advanced and au
 
 Lastly, i used `$ alsamixer` to adjust the volume on the Pi. 
 
+## Shutdown
+
+`sudo shutdown -h now` 
+
+And just wait for the `act` to stop blinking on the board before unplugging
+
+## Running Scripts on a timer
+
+So I needed to run the `mpg123` command at a specified time each morning. I decided to use cron for it.
+
+`crontab -e` Opens Vim
+ 
+and added this to the file.
+ 
+`15 23 * * * mpg123 music.mp3`
+
+This means at 23:15 UTC each day the command will run
+
 Easy as...Pi
 
 
