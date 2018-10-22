@@ -14,7 +14,7 @@ Generate a personal outh key from your github account, with private repo access
 
 Add it to your config with, and thats it!
 
-`bundle config github.com deploywebbernet:93921321939MYAUTHTOKEN2131231`
+`bundle config github.com <GITHUB-USERNAME>:93921321939MYAUTHTOKEN2131231`
 
 + Bonus this what can be added to the dockerfile for the build, you can pass the github token through with an env variable, install and then remove it again.
 
