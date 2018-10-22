@@ -51,7 +51,7 @@ Lastly, i used `$ alsamixer` to adjust the volume on the Pi.
 
 `sudo shutdown -h now` 
 
-And just wait for the `act` to stop blinking on the board before unplugging
+And just wait for the `act` light to stop blinking on the board before unplugging it.
 
 ## Running Scripts on a timer
 
