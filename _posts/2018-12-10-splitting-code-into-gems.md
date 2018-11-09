@@ -1,5 +1,3 @@
-# Splitting Code into Gems
-
 I must admit that I don't have much experience with Ruby gems. I absolutely love the concept, and it's something that I aim to learn more about in next year.
 
 If I'm honest, I am excited that the savings it will bring my business. Lots of the custom applications we build have underlying core technology that we either end up duplicating or rebuilding. I'm excited for the consistency it will bring our code, and allowing us to build our own standard library that we can share among our clients.
