@@ -1,5 +1,4 @@
-### Bash
-
+## Bash
 **Continually check if a website is up**
 ```shell
 $ while ! curl http://download.redis.io/ -m 5 ; do sleep 1 ; done
