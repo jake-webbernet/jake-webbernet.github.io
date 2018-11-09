@@ -13,7 +13,7 @@ $ apt-get install aha
 $ git diff master remotes/b/master --colour-words | aha --black > output_file.htm
 ```
 
-### ROR
+## ROR
 **Add Postgres unix date default**
 
 ```ruby
