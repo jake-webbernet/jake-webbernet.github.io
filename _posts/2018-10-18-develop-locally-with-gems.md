@@ -16,7 +16,7 @@ So instead of using the `path` parameter, I've found a way to use bundle config 
 To get this going the first task is to ensure that you have a `branch` specifier for the gem.
 
 ```ruby
-gem 'mygem, git: "https://github.com/Webbernet/mygem", branch: 'master'
+gem 'mygem', git: "https://github.com/Webbernet/mygem", branch: 'master'
 ```
 
 Next, we can tell bundle that for `mygem`, you can find it in `~/mygem` on my computer. 
