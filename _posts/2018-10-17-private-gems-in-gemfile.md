@@ -16,6 +16,24 @@ Add it to your config with, and thats it!
 
 `bundle config github.com <GITHUB-USERNAME>:93921321939MYAUTHTOKEN2131231`
 
-+ Bonus this what can be added to the dockerfile for the build, you can pass the github token through with an env variable, install and then remove it again.
+### Docker Setup
 
-`RUN bundle config github.com deploywebbernet:$github_token && (bundle install --without test development) && bundle config --delete github.com`
+I needed to also set this up on our CI for our production boxes. 
+
+I had to change
+* Dockerfile 
+  * This is because the Dockerfile is resposible for installing all the gems. I need to enable this to see the private gem.
+* Our CI file
+  * This is because I need to pass the Dockerfile the Github OAuth Token
+
+These are the changes I made:
+1. Added an `ARG github_token` inside the Dockerfile. This allows me to pass in a github token when building the dockerfile
+2. Changed the usual `bundle install` line in the Dockerfile to:
+```ruby
+RUN bundle config github.com deploywebbernet:$github_token && (bundle install --without test development) && bundle config --delete github.com
+```
+This does a bundle install with the token, and then removes the token so it doesn't sit in the Container.
+3. In the CI build service, I added a `--build-arg` flag to the `docker build` command.
+```ruby
+docker build -f ci-Dockerfile-Chromium --build-arg github_token=$PRIVATE_GEM_GITHUB_TOKEN -t tester .
+```
