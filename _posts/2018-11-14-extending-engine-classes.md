@@ -16,12 +16,14 @@ Answer - A little bit of meta programming.
 Setup an initializer in the host application for the engine. Lets say `config/initializers/myengine.rb`
 
 ```ruby
-MyEngine::Stream.class_eval do
-  has_one :staff, foreign_key: 'my_engine_stream_id'
+Rails.application.config.to_prepare do
+  MyEngine::Stream.class_eval do
+    has_one :staff, foreign_key: 'my_engine_stream_id'
+  end
 end
 ```
 
-This uses the `class_eval` metaprogramming method that allows us to dynamically add code to the class at runtime.
+This uses the `class_eval` metaprogramming method that allows us to dynamically add code to the class at runtime. The `Rails.application.config.to_prepare` block was really important because without it, the `class_eval` was not working when developing locally after a change. I believe this would be because Rails reloads the classes after every change, but doesn't run the initializers. The result would be `missing 'staff' relationship on the stream class. The `to_prepare` seemed to fix this.
 
 Now we can run `stream.staff` and that returns the correct staff model as usual.
 
