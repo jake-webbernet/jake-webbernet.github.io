@@ -79,10 +79,6 @@ Simply add this policy to the bucket we want to be accessed. Note the bucket nam
     }
   ]
 }
-
-
-
-
 ```
 
 ## Running the Sync Operation
