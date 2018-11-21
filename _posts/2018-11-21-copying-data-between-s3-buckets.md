@@ -12,16 +12,32 @@ This will be used to run the actual copy/sync operation. This user has to have a
             "Effect": "Allow",
             "Action": [
                 "s3:ListBucket",
-                "s3:GetObject",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": [
+                "arn:aws:s3:::origin_bucket",
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::origin_bucket/some_subfolder/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucket",
                 "s3:PutObject",
                 "s3:PutObjectAcl",
                 "s3:GetBucketLocation"
             ],
             "Resource": [
-                "arn:aws:s3:::my-destination-bucket",
-                "arn:aws:s3:::my-destination-bucket/*",
-                "arn:aws:s3:::my-original-bucket",
-                "arn:aws:s3:::my-original-bucket/*"
+                "arn:aws:s3:::destination-bucket",
+                "arn:aws:s3:::destination-bucket/*",
             ]
         }
     ]
@@ -29,6 +45,11 @@ This will be used to run the actual copy/sync operation. This user has to have a
 ```
 
 This will allow the user to be able to kick off a copy operation with both buckets. It's important to note that this user should be able to push ACLs so that the files are actually owned by the new bucket.
+
+* The first statement allows the user to list the origin bucket entirely. This is especially important if you only want to allow copying of files in a directory, the user still needs to be list the entire bucket.
+* The second statement allows the user to get objects in the bucket (optionally in a specific directory)
+* The last statement is all about allowing the user to access the destination bucket
+
 
 ## Setup a bucket policy on destination AWS account
 
@@ -58,6 +79,10 @@ Simply add this policy to the bucket we want to be accessed. Note the bucket nam
     }
   ]
 }
+
+
+
+
 ```
 
 ## Running the Sync Operation
