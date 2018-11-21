@@ -58,7 +58,6 @@ Next we need to actually allow the above user to access the bucket on the destin
 Simply add this policy to the bucket we want to be accessed. Note the bucket name, as well as the ARN of the above user should be included.
 
 ```json
-
 {
   "Id": "WebbernetBackup",
   "Version": "2012-10-17",
