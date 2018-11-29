@@ -15,7 +15,7 @@ This will be used to run the actual copy/sync operation. This user has to have a
                 "s3:GetBucketLocation"
             ],
             "Resource": [
-                "arn:aws:s3:::origin_bucket",
+                "arn:aws:s3:::origin_bucket"
             ]
         },
         {
@@ -37,7 +37,7 @@ This will be used to run the actual copy/sync operation. This user has to have a
             ],
             "Resource": [
                 "arn:aws:s3:::destination-bucket",
-                "arn:aws:s3:::destination-bucket/*",
+                "arn:aws:s3:::destination-bucket/*"
             ]
         }
     ]
