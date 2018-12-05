@@ -4,6 +4,11 @@
 $ while ! curl http://download.redis.io/ -m 5 ; do sleep 1 ; done
 ```
 
+**Check if a command runs successfully**
+```shell
+$ while docker info ; ret=$? ; [ $ret -ne 0 ]; do echo "waiting for docker to start" && sleep 5; done
+```
+
 **Output to HTML**
 * Use aha to output terminal output to a HTML file preserving colours. I used this to output a git diff to a HTML file which was really helpful
 
