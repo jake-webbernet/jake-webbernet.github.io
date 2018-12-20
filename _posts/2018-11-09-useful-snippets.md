@@ -23,3 +23,14 @@ $ git diff master remotes/b/master --colour-words | aha --black > output_file.ht
 ```ruby
 change_column :jobs, :status_updated_at, :integer, default: -> { 'extract(epoch from now())' }, null: false
 ```
+
+## Emacs
+**Search and replace in a directory**
+
+Using Dired.
+
+* Navigate to a directory with Dired
+* Mark the directory/files you would like to replace with `m`
+* Use `u` to to unmark files accidently marked
+* Use `Q` to executed `dired-find-and-replace-regexp` and add search terms and replace terms and hit enter
+* Cycle through and press `y` or `SPACE` to replace the current one
