@@ -34,3 +34,11 @@ Using Dired.
 * Use `u` to to unmark files accidently marked
 * Use `Q` to executed `dired-find-and-replace-regexp` and add search terms and replace terms and hit enter
 * Cycle through and press `y` or `SPACE` to replace the current one
+
+
+**Running SQLi**
+
+* Create a buffer with `sql-mode` switched on, or navigate to an SQL file
+* Startup a `sql-postgres` session, and supply all necessary credentials to login
+* Go back to the first buffer and run `sql-send-region` (C-c C-r) to send the selected SQL statement to postgres
+* This makes it really fast for profiling and testing.
