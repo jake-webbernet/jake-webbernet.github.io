@@ -1,6 +1,7 @@
 ---
-published: false
+published: true
 ---
+
 We found that a certain number of queries were running really slow. In this article I want to explore some of the findings I've had when speeding up some of the queries.
 
 ## Tables
