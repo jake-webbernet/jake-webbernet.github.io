@@ -107,7 +107,7 @@ I opted for a model spec in Rails, just testing that I was prevented from updati
 
 I ended up adding this [Great custom matcher](http://www.techienov.com/snippet/rspec/custom-check-constraint/) in RSPEC so that I could accurately test that my new constraint was working correctly in the spec below.
 
-```
+```ruby
 require "rails_helper"
 
 RSpec.describe Session do
